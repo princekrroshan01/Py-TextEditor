@@ -1,8 +1,14 @@
-from pytedit import thisFileMenu,thisMenuBar, thisEditMenu, thisTextArea 
+import os
+
+from pytedit import thisFileMenu,thisMenuBar, thisEditMenu, thisTextArea,root 
+from tkinter import END
+from tkinter import filedialog as fd
+
+
 
 def openFile():
 
-    file = askopenfilename(defaultextension=".txt",
+    file = fd.askopenfilename(defaultextension=".txt",
                                   filetypes=[("All Files", "*.*"),
                                              ("Text Documents", "*.txt")])
 
@@ -25,10 +31,11 @@ def newFile():
     thisTextArea.delete(1.0, END)
     
 
-def saveFile(self):
 
+def saveFile():
+    file=None    
     if file == None:
-        file = asksaveasfilename(initialfile='Untitled.txt',
+        file = fd.asksaveasfilename(initialfile='Untitled.txt',
                                         defaultextension=".txt",
                                         filetypes=[("All Files", "*.*"),
                                                    ("Text Documents", "*.txt")])
@@ -37,9 +44,9 @@ def saveFile(self):
             file = None
         else:
 
-            file = open(file, "w")
-            file.write(thisTextArea.get(1.0, END))
-            file.close()
+            with open(file, "w") as f:
+                f.write(thisTextArea.get(1.0, END))
+            
 
             root.title(os.path.basename(file) + " - Notepad")
 

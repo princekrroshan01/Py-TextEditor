@@ -1,5 +1,5 @@
 from pytedit import thisFormatMenu, thisMenuBar
-
+from tkinter import END
 def format(self):
     mytext = thisTextArea.get("1.0", END)
 
