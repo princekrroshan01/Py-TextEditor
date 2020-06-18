@@ -20,7 +20,7 @@ python3 run.py --help
 Usage: run.py [OPTIONS]
 
 Options:
-  --coading TEXT  coading mode
+  --coading TEXT  coding mode
   --reading TEXT  reading mode you can translate text from one language to
                   another and their is text to speech facility also
   --help          Show this message and exit.
