@@ -1,9 +1,10 @@
-import tkinter
 import os
+import tkinter
 from tkinter import *
 from tkinter.messagebox import *
 from tkinter.filedialog import *
 
+import click
 
 root = Tk()
 
@@ -59,11 +60,15 @@ thisTextArea.config(yscrollcommand=thisScrollBar.set)
 
 
 
-import pytedit.pytcore
-import pytedit.pytcode
-import pytedit.pytedit 
-
-
-def run():
+@click.command()
+@click.option("--coading", default='yes', help='coading mode')
+@click.option("--reading", default='yes', help='reading mode you can translate text from one language to another and their is text to speech facility also')
+def run(coading,reading):
+    if coading == 'yes':
+        import pytedit.pytcore
+        import pytedit.pytcode
+    else:
+        import pytedit.pytcore
+        import pytedit.pytedit 
     root.mainloop()
 

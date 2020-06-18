@@ -10,9 +10,23 @@ virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-then run run.py
+then run python3 run.py --coading='yes'/'no'
 ```
         
+## example
+
+```bash
+python3 run.py --help 
+Usage: run.py [OPTIONS]
+
+Options:
+  --coading TEXT  coading mode
+  --reading TEXT  reading mode you can translate text from one language to
+                  another and their is text to speech facility also
+  --help          Show this message and exit.
+
+```
+
 ## ToDo
 
 - [x] Make the repo modular.
